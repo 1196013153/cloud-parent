@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.87.18.31:8761/eureka/
+  # 自定义实例编号
+  instance:
+    prefer-ip-address: true
+server:
+  port: 7083
+spring:
+  application:
+    name: eureka-feign
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

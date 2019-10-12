@@ -1,0 +1,24 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ye1998.host:8761/eureka/
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+spring:
+  application:
+    name: eureka-customer
+  zipkin:
+    base-url: http://ye1998.host:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+logging:
+  file: E:\logs\test.log

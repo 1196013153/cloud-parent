@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: elapse_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: elapse_route
+          uri: http://httpbin.org:80/
+          filters:
+            - RequestTime=true
+          predicates:
+            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+  profiles: elapse_route

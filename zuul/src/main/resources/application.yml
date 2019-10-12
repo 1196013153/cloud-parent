@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ye1998.host:8761/eureka/
+server:
+  port: 8085
+spring:
+  application:
+    name: eureka-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: EUREKA-PROVIDER
