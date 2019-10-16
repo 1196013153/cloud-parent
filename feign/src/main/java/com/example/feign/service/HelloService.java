@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface HelloService {
 
     @RequestMapping("/hello")
-    String hello();
+    String hello(String name);
 }

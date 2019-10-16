@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,9 +26,9 @@ public class ProviderApplication {
     }
 
     @RequestMapping("/hello")
-    public String hello(String name) throws InterruptedException {
+    public String hello(@RequestBody String name) {
        // Thread.sleep(300);
-      //  logger.info("服务被调用,name="+name);
+        logger.info("服务被调用,name="+name);
         return name;
     }
 

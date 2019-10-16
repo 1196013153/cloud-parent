@@ -10,9 +10,9 @@ public class HelloService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "helloFallBack")
-    public String helloService() {
-        return restTemplate.getForEntity("http://EUREKA-PROVIDER/hello", String.class).getBody();
+   // @HystrixCommand(fallbackMethod = "helloFallBack")
+    public String helloService(String name) {
+        return restTemplate.getForEntity("http://EUREKA-PROVIDER/hello?name={name}", String.class,name).getBody();
     }
 
     public String helloFallBack() {

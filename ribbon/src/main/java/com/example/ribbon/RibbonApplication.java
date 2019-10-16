@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringCloudApplication
-@EnableHystrixDashboard
+//@EnableHystrixDashboard
 public class RibbonApplication {
     public static void main(String[] args) {
         SpringApplication.run(RibbonApplication.class, args);

@@ -1,26 +1,21 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://192.87.18.31:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   # 自定义实例编号
   instance:
     # 优先使用IP地址方式进行注册服务
     prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 5
+#    metadata-map:
+#      user-name: zhangsan
+#      user-age: 25
+#      address: henan
 server:
-  port: 8098
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
+  port: 8889
 spring:
   application:
     name: eureka-provider
-  sleuth:
-    sampler:
-      probability: 1.0
 #  profiles:
 #    active: peer1,peer2
